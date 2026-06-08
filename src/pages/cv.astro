@@ -2,12 +2,13 @@
 import Layout from '../components/Layout.astro';
 
 const coursework = [
-  'Calculus I',
-  'Calculus II',
-  'General Physics',
-  'Statistical Methods',
-  'Intro to Python',
-  'First-Year Writing',
+  'Calculus I (A)',
+  'Calculus II (A)',
+  'General Physics (A)',
+  'Statistical Methods (A)',
+  'Intro to Python (A)',
+  'First-Year Writing (A)',
+  'Data in Social Context (A)',
 ];
 
 const skills = [
@@ -77,7 +78,24 @@ const awards = [
           <div>
             <h3>Virginia Tech</h3>
             <p>B.S. Computational Modeling & Data Analytics</p>
+            <p>College of Science</p>
             <p>Expected Graduation: 2029</p>
+            <dl class="academic-metrics" aria-label="Academic highlights">
+              <div>
+                <dt>GPA</dt>
+                <dd>4.0 / 4.0</dd>
+              </div>
+              <div>
+                <dt>Academic Achievement</dt>
+                <dd>All completed university coursework has been completed with grades of A.</dd>
+              </div>
+            </dl>
+            <div class="coursework-block">
+              <h4>Selected Coursework</h4>
+              <div class="tag-row">
+                {coursework.map((item) => <span>{item}</span>)}
+              </div>
+            </div>
           </div>
           <div>
             <h3>Beijing No. 4 High School</h3>
@@ -101,12 +119,6 @@ const awards = [
       <article>
         <h2>Coursework & Skills</h2>
         <div class="skills-layout">
-          <div>
-            <h3>Completed Coursework</h3>
-            <div class="tag-row">
-              {coursework.map((item) => <span>{item}</span>)}
-            </div>
-          </div>
           <div>
             <h3>Skills</h3>
             <div class="tag-row">
@@ -181,6 +193,41 @@ const awards = [
     font-weight: 720;
   }
 
+  .academic-metrics {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.34fr) minmax(0, 0.66fr);
+    gap: 12px;
+    max-width: 640px;
+    margin: 18px 0 0;
+  }
+
+  .academic-metrics div {
+    display: contents;
+  }
+
+  .academic-metrics dt,
+  .coursework-block h4 {
+    color: var(--gold-dark);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .academic-metrics dd {
+    margin: 0;
+    color: var(--text);
+    font-weight: 680;
+  }
+
+  .coursework-block {
+    margin-top: 22px;
+  }
+
+  .coursework-block .tag-row {
+    margin-top: 12px;
+  }
+
   .skills-layout {
     display: grid;
     gap: 28px;
@@ -208,6 +255,11 @@ const awards = [
     .cv-list article {
       grid-template-columns: 1fr;
       gap: 14px;
+    }
+
+    .academic-metrics {
+      grid-template-columns: 1fr;
+      gap: 6px;
     }
   }
 </style>
