@@ -110,6 +110,6 @@ jobs:
 ## Customization Notes
 
 - Replace placeholder contact links in `src/components/Footer.astro` and `src/pages/cv.astro`.
-- Replace `public/Hexin-Yu-CV.pdf` with the final CV PDF.
+- The CV download is served from `public/Hexin-Yu-CV.pdf`.
 - Add or edit observation posts in `src/content/observations/`.
 - Update project links in `src/data/projects.ts`.
