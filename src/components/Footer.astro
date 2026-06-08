@@ -4,7 +4,10 @@ const year = new Date().getFullYear();
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>&copy; {year} Hexin Yu</p>
+    <div>
+      <p class="footer-title">Hexin Yu</p>
+      <p>&copy; {year} Computational Modeling & Data Analytics</p>
+    </div>
     <div class="footer-links">
       <a href="mailto:hexinyu@example.com">Email</a>
       <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
@@ -16,16 +19,22 @@ const year = new Date().getFullYear();
 <style>
   .site-footer {
     border-top: 1px solid var(--border);
-    background: var(--surface);
+    background: #fff;
     color: var(--muted);
   }
 
   .footer-inner {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
-    min-height: 88px;
+    min-height: 128px;
+    padding: 30px 0;
     gap: 18px;
+  }
+
+  .footer-title {
+    color: var(--text);
+    font-weight: 600;
   }
 
   .footer-links {

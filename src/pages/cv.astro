@@ -1,0 +1,93 @@
+---
+import Layout from '../components/Layout.astro';
+import { projects } from '../data/projects';
+
+const skills = [
+  'Python',
+  'Pandas',
+  'SQL',
+  'JavaScript',
+  'Astro',
+  'GIS',
+  'GeoJSON',
+  'QGIS',
+  'data visualization',
+  'transportation analytics',
+];
+---
+
+<Layout
+  title="CV"
+  description="CV for Hexin Yu, including education, technical skills, selected projects, and contact information."
+>
+  <div class="page-shell">
+    <header class="container page-intro">
+      <p class="page-kicker">CV</p>
+      <h1>Hexin Yu</h1>
+      <p class="lead">
+        Computational Modeling & Data Analytics student at Virginia Tech with interests in aviation analytics,
+        GIS, transportation networks, and data visualization.
+      </p>
+      <a class="text-link" href={`${import.meta.env.BASE_URL}Hexin-Yu-CV.pdf`}>Download CV -></a>
+    </header>
+
+    <section class="container cv-list">
+      <article>
+        <h2>Education</h2>
+        <div>
+          <h3>Virginia Tech</h3>
+          <p>Computational Modeling & Data Analytics</p>
+        </div>
+      </article>
+
+      <article>
+        <h2>Technical Skills</h2>
+        <div class="tag-row">
+          {skills.map((skill) => <span>{skill}</span>)}
+        </div>
+      </article>
+
+      <article>
+        <h2>Selected Projects</h2>
+        <ul class="quiet-list">
+          {projects.map((project) => <li>{project.title}</li>)}
+        </ul>
+      </article>
+
+      <article>
+        <h2>Contact</h2>
+        <ul class="quiet-list">
+          <li><a href="mailto:hexinyu@example.com">hexinyu@example.com</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        </ul>
+      </article>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .cv-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .cv-list article {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.36fr) minmax(0, 0.64fr);
+    gap: 36px;
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+  }
+
+  .cv-list p {
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .cv-list article {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>

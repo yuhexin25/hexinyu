@@ -1,0 +1,90 @@
+---
+import Layout from '../components/Layout.astro';
+---
+
+<Layout
+  title="Research"
+  description="Research interests for Hexin Yu, including aviation network resilience, delay propagation, regional airport performance, GIS, and transportation systems."
+>
+  <div class="page-shell">
+    <header class="container page-intro">
+      <p class="page-kicker">Research</p>
+      <h1>Reading aviation systems through data and geography</h1>
+      <p class="lead">
+        My current interests center on the shape of delay: where disruptions begin, how they travel,
+        and what airport networks reveal when they are studied as geographic systems.
+      </p>
+    </header>
+
+    <section class="container research-list" aria-label="Research interests">
+      <article>
+        <h2>Current Interests</h2>
+        <p>
+          Aviation analytics, public transportation datasets, geospatial visualization, route-level risk,
+          and data tools that help explain complex systems without hiding their uncertainty.
+        </p>
+      </article>
+      <article>
+        <h2>Hub vs Regional Airport Performance</h2>
+        <p>
+          Comparing how large hub airports and smaller regional airports absorb, amplify, or inherit operational
+          disruptions across different route structures.
+        </p>
+      </article>
+      <article>
+        <h2>Delay Propagation Across Airline Networks</h2>
+        <p>
+          Studying how late aircraft, congested airports, and tight schedule dependencies can turn local delays
+          into wider network effects.
+        </p>
+      </article>
+      <article>
+        <h2>Aviation Network Resilience</h2>
+        <p>
+          Asking what makes a route system recoverable: redundancy, geography, airport capacity, carrier strategy,
+          and the ability to reroute passengers and aircraft.
+        </p>
+      </article>
+      <article>
+        <h2>GIS and Transportation Systems</h2>
+        <p>
+          Building maps and visual interfaces that connect route networks, airport regions, and operational
+          patterns in ways that support careful interpretation.
+        </p>
+      </article>
+      <article>
+        <h2>Future Directions</h2>
+        <p>
+          Future work may connect live aviation data, historical reliability, weather context, and airport network
+          structure into lightweight decision-support tools for route risk exploration.
+        </p>
+      </article>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .research-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .research-list article {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.36fr) minmax(0, 0.64fr);
+    gap: 36px;
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+  }
+
+  .research-list p {
+    color: var(--muted);
+  }
+
+  @media (max-width: 760px) {
+    .research-list article {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  }
+</style>
