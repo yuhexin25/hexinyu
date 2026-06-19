@@ -41,6 +41,16 @@ const futureDirections = [
   'Hub vs regional airport comparison',
   'Aviation network resilience metrics',
 ];
+
+const featuredArticle = {
+  title: "How the 2026 FIFA World Cup Is Stress-Testing America's Air Travel Network",
+  description:
+    'Aviation demand, hub congestion, and transportation resilience during the largest World Cup in history.',
+  date: 'June 18, 2026',
+  readingTime: '10 min read',
+  href: `${import.meta.env.BASE_URL}research/world-cup-air-travel-network`,
+  tags: ['Aviation Networks', 'Transportation Geography', 'World Cup 2026'],
+};
 ---
 
 <Layout
@@ -67,6 +77,26 @@ const futureDirections = [
           </p>
         </aside>
       </div>
+    </section>
+
+    <section class="container agenda-section" aria-labelledby="commentary-heading">
+      <div class="section-heading">
+        <div>
+          <p class="page-kicker">Research Commentary</p>
+          <h2 id="commentary-heading">Analysis in context</h2>
+        </div>
+      </div>
+      <a class="article-card" href={featuredArticle.href}>
+        <div class="article-card-copy">
+          <p class="article-meta">{featuredArticle.date} <span>/</span> {featuredArticle.readingTime}</p>
+          <h3>{featuredArticle.title}</h3>
+          <p>{featuredArticle.description}</p>
+          <div class="article-tags">
+            {featuredArticle.tags.map((tag) => <span>{tag}</span>)}
+          </div>
+        </div>
+        <span class="article-arrow" aria-hidden="true">-&gt;</span>
+      </a>
     </section>
 
     <section class="container agenda-section" aria-labelledby="themes-heading">
@@ -200,6 +230,53 @@ const futureDirections = [
   .agenda-section {
     padding-top: 68px;
   }
+
+  .article-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background: linear-gradient(125deg, #172033 0%, #243554 70%, #814b16 130%);
+    box-shadow: 0 20px 44px rgba(30, 41, 59, 0.15);
+    padding: 34px;
+    color: #fff;
+  }
+
+  .article-card:hover {
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-3px);
+  }
+
+  .article-card h3 {
+    max-width: 800px;
+    margin-top: 12px;
+    color: #fff;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .article-card-copy > p:not(.article-meta) {
+    max-width: 760px;
+    margin-top: 14px;
+    color: #dbe6f7;
+  }
+
+  .article-meta {
+    color: #f6c76f;
+    font-size: 0.82rem;
+    font-weight: 760;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .article-meta span { padding-inline: 7px; }
+
+  .article-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+  .article-tags span { border: 1px solid rgba(255,255,255,.2); border-radius: 999px; padding: 5px 10px; color: #eef4ff; font-size: .78rem; }
+  .article-arrow { color: #f6c76f; font-size: 2rem; transition: transform 180ms ease; }
+  .article-card:hover .article-arrow { transform: translateX(5px); }
 
   .theme-grid {
     display: grid;
@@ -387,6 +464,8 @@ const futureDirections = [
       border-radius: 20px;
       padding: 22px;
     }
+
+    .article-card { grid-template-columns: 1fr; padding: 24px; }
 
     .methods-band {
       margin-top: 48px;

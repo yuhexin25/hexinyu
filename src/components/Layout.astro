@@ -6,11 +6,14 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
-const { title, description } = Astro.props;
+const { title, description, image, type = 'website' } = Astro.props;
 const fullTitle = `${title} | Hexin Yu`;
 const faviconHref = `${import.meta.env.BASE_URL}favicon.svg`;
+const imageUrl = image ? new URL(image, Astro.site).toString() : undefined;
 ---
 
 <!doctype html>
@@ -22,7 +25,8 @@ const faviconHref = `${import.meta.env.BASE_URL}favicon.svg`;
     <meta name="generator" content={Astro.generator} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
     <link rel="icon" href={faviconHref} type="image/svg+xml" />
     <title>{fullTitle}</title>
   </head>
