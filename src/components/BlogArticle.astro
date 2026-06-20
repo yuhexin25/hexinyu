@@ -1,0 +1,46 @@
+---
+import Layout from './Layout.astro';
+
+interface Props {
+  title: string;
+  subtitle: string;
+  category: string;
+  date: string;
+  readingTime: string;
+  tags: string[];
+  image: string;
+  imageAlt: string;
+}
+
+const { title, subtitle, category, date, readingTime, tags, image, imageAlt } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout title={title} description={subtitle} image={image} type="article">
+  <article class="blog-article">
+    <header class="blog-hero">
+      <img src={image} alt={imageAlt} />
+      <div class="blog-hero-shade"></div>
+      <div class="container blog-hero-copy">
+        <a href={`${base}blog/`}>&lt;- Blog</a>
+        <p class="blog-category">{category}</p>
+        <h1>{title}</h1>
+        <p class="blog-subtitle">{subtitle}</p>
+        <div class="blog-meta"><span>Hexin Yu</span><span>{date}</span><span>{readingTime}</span></div>
+      </div>
+    </header>
+    <div class="container blog-layout">
+      <aside><p>Topics</p><div>{tags.map((tag) => <span>{tag}</span>)}</div></aside>
+      <div class="blog-prose"><slot /></div>
+    </div>
+  </article>
+</Layout>
+
+<style is:global>
+  .blog-hero{position:relative;display:flex;min-height:610px;align-items:end;overflow:hidden;background:#172033}.blog-hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.blog-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,20,37,.12),rgba(12,20,37,.96) 90%)}.blog-hero-copy{position:relative;z-index:1;padding-block:96px 64px}.blog-hero-copy>a{display:inline-block;margin-bottom:46px;color:#dbeafe;font-weight:700}.blog-category{margin-bottom:14px;color:#f6c76f;font-size:.78rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase}.blog-hero h1{max-width:980px;color:#fff;font-size:clamp(2.7rem,6vw,5.5rem)}.blog-subtitle{max-width:800px;margin-top:20px;color:#dbe6f7;font-size:clamp(1.08rem,2vw,1.4rem);line-height:1.6}.blog-meta{display:flex;flex-wrap:wrap;gap:10px 24px;margin-top:28px;color:#b9c7dc;font-size:.88rem}
+  .blog-layout{display:grid;grid-template-columns:170px minmax(0,780px);justify-content:center;gap:58px;padding-block:72px 104px}.blog-layout>aside{position:sticky;top:110px;align-self:start}.blog-layout>aside>p{margin-bottom:12px;color:var(--gold-dark);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}.blog-layout>aside>div{display:flex;flex-wrap:wrap;gap:7px}.blog-layout>aside span{border:1px solid var(--border);border-radius:999px;background:#fff;padding:5px 9px;color:#665d52;font-size:.72rem}
+  .blog-prose h2{margin:54px 0 18px;font-size:clamp(1.65rem,3vw,2.25rem)}.blog-prose h2:first-child{margin-top:0}.blog-prose h3{margin:36px 0 12px;font-size:clamp(1.2rem,2vw,1.5rem)}.blog-prose p{color:#374151;font-family:Georgia,'Times New Roman',serif;font-size:1.08rem;line-height:1.86}.blog-prose p+p{margin-top:18px}.blog-prose .lead{margin:0 0 28px;border-left:4px solid var(--gold);padding-left:20px;color:#1e293b;font-size:1.25rem;line-height:1.65}.blog-prose figure{margin:46px 0}.blog-prose figcaption,.blog-prose .visual-note{margin-top:12px;color:#6b7280;font-family:inherit;font-size:.8rem;line-height:1.55}.blog-prose figure img{display:block;width:100%;height:auto;border-radius:18px}.blog-prose .dark-visual{border:1px solid #31405d;border-radius:18px;background:#172033;padding:24px;color:#fff}.blog-prose .flow-stack{display:grid;justify-items:center;gap:8px}.blog-prose .flow-stack span{width:min(100%,540px);border:1px solid #425474;border-radius:12px;background:#202d48;padding:13px;color:#fff;font-weight:750;text-align:center}.blog-prose .flow-stack span.active{border-color:#d99a2b;background:#3b3023}.blog-prose .flow-stack small{display:block;margin-top:3px;color:#a9b9cf;font-size:.67rem;font-weight:500}.blog-prose .flow-stack i{color:#f6c76f;font-size:1.2rem;font-style:normal}.blog-prose .comparison{overflow-x:auto;border:1px solid var(--border);border-radius:16px;background:#fff}.blog-prose .comparison>div{display:grid;grid-template-columns:1fr 1fr 1.2fr;min-width:620px;border-top:1px solid var(--border)}.blog-prose .comparison>div:first-child{border-top:0;background:#172033}.blog-prose .comparison span,.blog-prose .comparison strong{padding:12px 14px;font-size:.8rem}.blog-prose .comparison span{color:#475569;font-weight:750}.blog-prose .comparison strong{border-left:1px solid var(--border);color:#5f6672;font-weight:500}.blog-prose .comparison>div:first-child span,.blog-prose .comparison>div:first-child strong{color:#fff;font-weight:750}.blog-prose .reference-list{display:grid;gap:11px;padding-left:22px;color:#64748b;font-size:.86rem;line-height:1.5}.blog-prose .reference-list a{color:#475569;text-decoration:underline;text-underline-offset:3px}
+  .blog-prose .evidence-grid{display:grid;grid-template-columns:1.35fr .65fr;overflow:hidden;border:1px solid var(--border);border-radius:18px}.blog-prose .evidence-grid img{width:100%;height:100%;max-height:620px;object-fit:contain;border-radius:0;background:#111827}.blog-prose .evidence-grid p{display:grid;align-content:center;margin:0;padding:20px;color:#64748b;font-family:inherit;font-size:.78rem;line-height:1.55}.blog-prose .project-block{display:grid;grid-template-columns:220px 1fr;overflow:hidden;margin-top:18px;border:1px solid var(--border);border-radius:18px;background:#fff}.blog-prose .project-block img{width:100%;height:100%;object-fit:cover}.blog-prose .project-block div{padding:22px}.blog-prose .project-block h3{margin:0 0 10px}.blog-prose .project-block p{font-size:.95rem;line-height:1.7}
+  @media(max-width:860px){.blog-layout{grid-template-columns:1fr;gap:30px}.blog-layout>aside{position:static}.blog-prose .project-block{grid-template-columns:1fr}.blog-prose .project-block img{max-height:320px}.blog-prose .evidence-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){.blog-hero{min-height:560px}.blog-hero-copy{padding-block:76px 46px}.blog-layout{padding-block:48px 76px}.blog-prose p{font-size:1.01rem}.blog-prose .dark-visual{padding:16px}.blog-prose .comparison{overflow-x:auto}}
+</style>

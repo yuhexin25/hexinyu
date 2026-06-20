@@ -12,13 +12,13 @@ const featuredLibraryNote = readingNotes[0];
 const featuredLibraryHref = featuredLibraryNote
   ? `${import.meta.env.BASE_URL}reading-notes/${featuredLibraryNote.data.source.slug}/${featuredLibraryNote.data.noteSlug}`
   : `${import.meta.env.BASE_URL}reading-notes`;
-const featuredResearchArticle = {
-  title: "How the 2026 FIFA World Cup Is Stress-Testing America's Air Travel Network",
+const featuredBlogArticle = {
+  title: 'World Cup 2026 and the U.S. Aviation System',
   description:
-    'Aviation demand, hub congestion, and transportation resilience during the largest World Cup in history.',
-  href: `${import.meta.env.BASE_URL}research/world-cup-air-travel-network/`,
-  image: `${import.meta.env.BASE_URL}research/world-cup-network-hero.png`,
-  meta: 'Updated June 19, 2026 / 15 min read',
+    'Demand waves, summer thunderstorms, and what I observed while traveling through Houston during consecutive matchdays.',
+  href: `${import.meta.env.BASE_URL}blog/world-cup-us-aviation-system/`,
+  image: `${import.meta.env.BASE_URL}research/houston-match-attendance.jpg`,
+  meta: 'June 20, 2026 / 7 min read',
 };
 ---
 
@@ -100,23 +100,23 @@ const featuredResearchArticle = {
     <section class="section featured-research-section" aria-labelledby="featured-research-heading">
       <div class="container section-heading">
         <div>
-          <p class="page-kicker">Featured Research Commentary</p>
-          <h2 id="featured-research-heading">Aviation networks in the real world</h2>
+          <p class="page-kicker">Featured Blog</p>
+          <h2 id="featured-research-heading">Aviation systems in context</h2>
         </div>
-        <a href={`${import.meta.env.BASE_URL}research`}>All research -&gt;</a>
+        <a href={`${import.meta.env.BASE_URL}blog/`}>All posts -&gt;</a>
       </div>
-      <a class="featured-research-card container" href={featuredResearchArticle.href}>
+      <a class="featured-research-card container" href={featuredBlogArticle.href}>
         <div class="featured-research-image">
           <img
-            src={featuredResearchArticle.image}
-            alt="Flight paths connecting airport hubs across North America"
+            src={featuredBlogArticle.image}
+            alt="Germany versus Curaçao scoreboard in Houston showing attendance of 68,021"
             loading="lazy"
           />
         </div>
         <div class="featured-research-copy">
-          <p class="featured-research-meta">{featuredResearchArticle.meta}</p>
-          <h3>{featuredResearchArticle.title}</h3>
-          <p>{featuredResearchArticle.description}</p>
+          <p class="featured-research-meta">{featuredBlogArticle.meta}</p>
+          <h3>{featuredBlogArticle.title}</h3>
+          <p>{featuredBlogArticle.description}</p>
           <span>Read the article -&gt;</span>
         </div>
       </a>

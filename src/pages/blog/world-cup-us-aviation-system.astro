@@ -1,0 +1,47 @@
+---
+import BlogArticle from '../../components/BlogArticle.astro';
+const base = import.meta.env.BASE_URL;
+---
+<BlogArticle title="World Cup 2026 and the U.S. Aviation System" subtitle="The operational challenge is not one match-day spike, but repeated demand waves meeting summer traffic and uncertain weather." category="Airline Operations" date="June 20, 2026" readingTime="7 min read" tags={['Airline Operations','Aviation Resilience','Houston','World Cup 2026']} image={`${base}research/houston-match-attendance.jpg`} imageAlt="Germany versus Curaçao scoreboard in Houston showing attendance of 68,021">
+  <p class="lead">A host city does not return to normal when the final whistle blows. One crowd leaves while the next match's teams, media, sponsors, and supporters are already moving in.</p>
+  <p>That overlap is the operational problem I noticed in Houston. The World Cup is often described as an extra burst of travel demand. A better description is a sequence of waves layered onto an aviation system already operating through the U.S. summer peak.</p>
+
+  <h2>Demand waves, not one demand spike</h2>
+  <p>I attended Germany versus Curaçao at Houston Stadium on June 14. The stadium display recorded 68,021 spectators. The gathering was comparable in scale to a major U.S. sporting event, but Houston was not hosting a one-day event. Portugal versus DR Congo followed on June 17, with more fixtures after that.</p>
+  <p>The Germany match generated arrivals before kickoff and departures afterward. At the same time, team logistics, media travel, sponsor movement, and preparations for the next match continued. A later fixture started another cycle before the city had fully exited the first one.</p>
+  <p>This differs from a Super Bowl, which can create a larger single peak but a comparatively concentrated arrival-event-departure pattern. A World Cup host city manages repeated cycles over several weeks.</p>
+  <div class="dark-visual"><div class="flow-stack"><span>June 14: Germany vs. Curaçao<small>Supporter and event arrivals</small></span><i>↓</i><span>June 15: departure wave<small>Fans, media, and visitors leave Houston</small></span><i>↓</i><span class="active">Thunderstorm activity + elevated IAH delays<small>Observed conditions, not proof of causation</small></span><i>↓</i><span>June 17: Portugal vs. DR Congo<small>New arrivals and event logistics</small></span></div></div>
+  <p class="visual-note">Demand waves and operational stress in Houston. The sequence shows overlapping conditions, not a causal chain.</p>
+
+  <h2>The tournament meets the summer peak</h2>
+  <p>June and July are already major leisure-travel months in the United States. Airlines are managing ordinary vacation demand, international football visitors, domestic fans, and team, media, and sponsor logistics at the same time.</p>
+  <p>Aircraft and crews cannot be created for one tournament. Gates, baggage systems, customs facilities, and ground transportation have finite capacity. Extra World Cup passengers therefore enter schedules that are already highly utilized.</p>
+  <p>This does not mean every host airport will be overloaded. It means recovery options matter. When later flights are full, a missed connection is harder to rebook. When crews and aircraft are tightly scheduled, disruption can take longer to unwind.</p>
+
+  <h2>Passenger volume is only one operating constraint</h2>
+  <p>An airport can process more passengers without adding the same percentage of aircraft movements if airlines use larger aircraft or achieve higher load factors. Conversely, a surge in charter and private flights can consume ramp space and air traffic capacity without appearing as a comparable increase in commercial passenger totals.</p>
+  <p>The World Cup mixes these demands. Scheduled airlines carry supporters. Charter operators move groups and sponsors. Teams and media organizations work to fixed schedules. Business aviation seeks parking and ground handling near match windows. FAA guidance for Houston required prior permission for many non-scheduled operations and warned pilots to expect traffic-management initiatives.</p>
+  <p>This is why an airport-operations view matters. Terminals, gates, runways, airspace, baggage systems, customs facilities, and surface transportation can reach pressure points at different times. A quiet check-in hall does not prove that ramp or airspace capacity is unconstrained.</p>
+
+  <h2>Weather changes the operating margin</h2>
+  <p>On my departure day, Houston experienced thunderstorm activity. Convective weather can reduce arrival and departure rates, pause ramp work, and force reroutes. At a large connecting hub such as IAH, those effects can reach passengers whose trips have nothing to do with the match.</p>
+  <p>At the time of my observation, an airport application reported an average IAH delay of 73 minutes. This does not prove that the World Cup caused the delay. It illustrates the kind of elevated operating condition that can coincide with a period of additional and tightly timed travel demand.</p>
+  <p><strong>World Cup demand may not create delays by itself, but it can reduce the system's ability to absorb weather-driven disruptions.</strong></p>
+  <div class="dark-visual"><div class="flow-stack"><span>Summer thunderstorms<small>Reduced airport operating rate</small></span><i>↓</i><span>Hub disruption<small>Late arrivals and departures</small></span><i>↓</i><span>Missed connections<small>Passengers, aircraft, and crews displaced</small></span><i>↓</i><span>Downstream delays<small>Effects extend beyond Houston</small></span></div></div>
+
+  <h2>Houston field observations</h2>
+  <p>Houston's two commercial airports provide scale and flexibility. FAA CY2024 data recorded 23.3 million enplanements at IAH and 7.1 million at Hobby. FAA tournament guidance also established special traffic procedures for the region, particularly for private and charter operations.</p>
+  <p>Those official facts describe the system. The photographs below describe what I encountered within it.</p>
+  <figure><div class="evidence-grid"><img src={`${base}research/houston-match-attendance.jpg`} alt="Germany versus Curaçao scoreboard showing a 6-1 score and attendance of 68,021" loading="lazy" /><p>Germany vs. Curaçao in Houston, with an observed attendance of 68,021 spectators. Source: Author photo, 2026 FIFA World Cup Houston.</p><img src={`${base}research/houston-iah-delay.jpg`} alt="Airport application screenshot showing reported delay conditions at Houston George Bush Intercontinental Airport" loading="lazy" /><p>Observed delay conditions at IAH during the tournament period. Source: Author screenshot and field observation.</p></div><figcaption>Field observations are contextual evidence rather than causal proof.</figcaption></figure>
+
+  <h2>What the screenshot can and cannot show</h2>
+  <p>The screenshot records a moment, not an explanation. It shows elevated reported delay conditions while I was at IAH, but it cannot separate weather, airline scheduling, air traffic management, normal summer congestion, and tournament-related travel.</p>
+  <p>That limitation is useful. Operational analysis often begins with an observation and then asks what evidence would be needed to test it. FAA OPSNET data can describe airport operations and delay programs. BTS On-Time Performance records can show flight-level arrival and departure outcomes. Weather observations can identify the timing of convective activity. Match schedules define the event windows.</p>
+  <p>A stronger post-event study would compare Houston matchdays with similar summer weekdays, control for weather, and examine whether delay or volume remained unusual after the immediate match window. The field observation motivates that question; it does not answer it.</p>
+  <p>It would also separate local passengers from connecting traffic. IAH can experience operational pressure even when many affected travelers never enter Houston, because a delayed connecting bank redistributes consequences across United's wider network. That distinction matters when evaluating a host city that is also a major hub.</p>
+
+  <h2>The operational lesson</h2>
+  <p>The World Cup's stress is repeated, not singular. Airports must manage a sequence of arrivals and departures while normal summer traffic continues and weather remains uncertain. The important measure is not only how high one peak becomes, but whether the system has enough time and capacity to recover before the next wave.</p>
+
+  <h2>References</h2><ol class="reference-list"><li><a href="https://www.faa.gov/fifaworldcup2026">FAA World Cup 2026 guidance</a></li><li><a href="https://www.faa.gov/airports/planning_capacity/passenger_allcargo_stats/passenger/arp-cy2024-commercial-service-enplanements.pdf">FAA CY2024 commercial-service enplanements</a></li><li><a href="https://nbaa.org/aircraft-operations/airspace/regional/fifa-world-cup-2026/">NBAA operational guidance</a></li><li><a href="https://www.universalweather.com/blog/2026-world-cup-business-aviation-planning-guide-2/">Universal Weather aviation planning guide</a></li></ol>
+</BlogArticle>

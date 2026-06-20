@@ -1,6 +1,6 @@
 # World Cup aviation data
 
-Processed data used by `src/pages/research/world-cup-air-travel-network.astro`.
+Processed data supporting the World Cup aviation posts under `src/pages/blog/`.
 
 ## Sources
 
