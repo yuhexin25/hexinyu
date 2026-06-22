@@ -136,16 +136,18 @@ const featuredBlogArticle = {
       </a>
     </section>
 
-    <section class="section academic-focus-section" aria-labelledby="academic-focus-heading">
-      <div class="container academic-focus-card">
+    <section class="section research-interests-section" aria-labelledby="research-interests-heading">
+      <div class="container research-interests-card">
         <div>
           <p class="page-kicker">Academic Focus</p>
-          <h2 id="academic-focus-heading">Aviation systems through data and geography</h2>
+          <h2 id="research-interests-heading">Research Interests</h2>
         </div>
-        <div class="academic-focus-copy">
-          <p>I study aviation systems through data, geography, and network thinking.</p>
-          <p>My work explores airline networks, airport connectivity, flight disruptions, and transportation data visualization.</p>
-        </div>
+        <ul class="research-interest-list">
+          <li>Airline Networks</li>
+          <li>Transportation Systems</li>
+          <li>Aviation Reliability</li>
+          <li>Data Visualization</li>
+        </ul>
       </div>
     </section>
 
@@ -492,12 +494,12 @@ const featuredBlogArticle = {
     padding-block: 38px 68px;
   }
 
-  .academic-focus-section {
+  .research-interests-section {
     background: #fff;
     padding-block: 38px;
   }
 
-  .academic-focus-card {
+  .research-interests-card {
     display: grid;
     grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
     gap: clamp(28px, 5vw, 64px);
@@ -507,25 +509,37 @@ const featuredBlogArticle = {
     padding-block: 26px;
   }
 
-  .academic-focus-card h2 {
+  .research-interests-card h2 {
     max-width: 470px;
     margin-top: 4px;
     font-size: clamp(1.35rem, 2.4vw, 2rem);
   }
 
-  .academic-focus-copy {
+  .research-interest-list {
     display: grid;
-    gap: 7px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
-  .academic-focus-copy p {
-    color: var(--muted);
-    line-height: 1.6;
+  .research-interest-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #475569;
+    font-weight: 680;
   }
 
-  .academic-focus-copy p:first-child {
-    color: var(--text);
-    font-weight: 720;
+  .research-interest-list li::before {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 4px var(--gold-soft);
+    content: '';
   }
 
   .reading-strip h2 a {
@@ -580,9 +594,13 @@ const featuredBlogArticle = {
   }
 
   @media (max-width: 700px) {
-    .academic-focus-card {
+    .research-interests-card {
       grid-template-columns: 1fr;
       gap: 18px;
+    }
+
+    .research-interest-list {
+      grid-template-columns: 1fr;
     }
 
     .reading-strip {
