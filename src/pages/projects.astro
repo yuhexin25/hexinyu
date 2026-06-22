@@ -67,17 +67,11 @@ const years = Object.keys(projectsByYear).sort((a, b) => Number(b) - Number(a));
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
   }
 
-  @media (max-width: 900px) {
-    .projects-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 640px) {
+  @media (max-width: 720px) {
     .projects-page {
       padding: 3rem 1rem;
     }

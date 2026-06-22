@@ -32,7 +32,7 @@ const noteCountLabel = (count: number) => `${count} ${count === 1 ? 'note' : 'no
       {libraryCategories.map((category) => (
         <section class="category-panel" aria-labelledby={`${slugify(category.name)}-heading`}>
           <div class="category-heading">
-            <p class="page-kicker">{category.name}</p>
+            <p class="page-kicker">Category</p>
             <h2 id={`${slugify(category.name)}-heading`}>{category.name}</h2>
             <p>{category.description}</p>
           </div>

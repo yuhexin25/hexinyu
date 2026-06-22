@@ -3,8 +3,14 @@ interface Props {
   title: string;
   year: string;
   description: string;
+  researchQuestion: string;
+  methods: string;
+  data: string;
+  status: 'Active' | 'In Progress' | 'Published' | 'Planned';
   tags: string[];
   href?: string;
+  linkLabel?: string;
+  external?: boolean;
   image?: string;
   imageAlt?: string;
   variant?: 'row' | 'card';
@@ -14,14 +20,21 @@ const {
   title,
   year,
   description,
+  researchQuestion,
+  methods,
+  data,
+  status,
   tags,
   href,
+  linkLabel = 'View project',
+  external = true,
   image,
   imageAlt = `${title} project preview`,
   variant = 'card',
 } = Astro.props;
 
 const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}` : undefined;
+const projectHref = href && !external ? `${import.meta.env.BASE_URL}${href.replace(/^\//, '')}` : href;
 ---
 
 <article class:list={['project-card', variant === 'card' && 'project-card--card']}>
@@ -30,7 +43,7 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
       <img src={imageSrc} alt={imageAlt} loading="lazy" />
     </div>
   )}
-  <div class="project-year">{year}</div>
+  <div class="project-meta-row"><span class="project-year">{year}</span><span class:list={['project-status', `status-${status.toLowerCase().replace(' ', '-')}`]}>{status}</span></div>
   <div class="project-body">
     <div class="project-title-row">
       <span class="project-icon" aria-hidden="true">
@@ -42,11 +55,17 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
       <h3>{title}</h3>
     </div>
     <p>{description}</p>
+    <dl class="research-meta">
+      <div><dt>Research Question</dt><dd>{researchQuestion}</dd></div>
+      <div><dt>Methods</dt><dd>{methods}</dd></div>
+      <div><dt>Data</dt><dd>{data}</dd></div>
+    </dl>
     <ul class="tag-list" aria-label={`${title} tags`}>
       {tags.map((tag) => <li>{tag}</li>)}
     </ul>
     <div class="project-actions">
-      {href && <a class="project-button project-button-primary" href={href} target="_blank" rel="noopener noreferrer">Live Demo</a>}
+      <span>Links</span>
+      {projectHref && <a class="project-button project-button-primary" href={projectHref} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{linkLabel}</a>}
     </div>
   </div>
 </article>
@@ -114,7 +133,16 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
     transform: scale(1.035);
   }
 
-  .project-year {
+  .project-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .project-year,
+  .project-status {
     display: inline-flex;
     width: fit-content;
     border: 1px solid rgba(245, 158, 11, 0.32);
@@ -124,6 +152,24 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
     padding: 4px 10px;
     font-size: 0.82rem;
     font-weight: 800;
+  }
+
+  .project-status {
+    border-color: rgba(82, 124, 168, 0.24);
+    background: #eef4fa;
+    color: #385b7d;
+  }
+
+  .status-active {
+    border-color: rgba(42, 130, 96, 0.28);
+    background: #eaf7f1;
+    color: #256e55;
+  }
+
+  .status-in-progress {
+    border-color: rgba(181, 101, 118, 0.28);
+    background: #fbf0f3;
+    color: #8c4f5d;
   }
 
   .project-body {
@@ -183,6 +229,34 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
     overflow-wrap: normal;
   }
 
+  .research-meta {
+    display: grid;
+    gap: 9px;
+    margin: 18px 0 0;
+  }
+
+  .research-meta div {
+    display: grid;
+    gap: 2px;
+    border-left: 2px solid rgba(245, 158, 11, 0.34);
+    padding-left: 10px;
+  }
+
+  .research-meta dt {
+    color: var(--gold-dark);
+    font-size: 0.67rem;
+    font-weight: 820;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .research-meta dd {
+    margin: 0;
+    color: #526071;
+    font-size: 0.82rem;
+    line-height: 1.45;
+  }
+
   .tag-list {
     display: flex;
     flex-wrap: wrap;
@@ -207,6 +281,15 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 18px;
+  }
+
+  .project-actions > span {
+    width: 100%;
+    color: var(--gold-dark);
+    font-size: 0.67rem;
+    font-weight: 820;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
   }
 
   .project-button {
@@ -250,7 +333,7 @@ const imageSrc = image ? `${import.meta.env.BASE_URL}${image.replace(/^\//, '')}
   }
 
   .project-card--card {
-    min-height: 520px;
+    min-height: 690px;
   }
 
   .project-card--card:hover {

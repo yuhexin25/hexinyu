@@ -4,7 +4,7 @@ description: "Research note on Cirium's 2025 flight emissions review and the ope
 source:
   name: "Cirium"
   slug: "cirium"
-  category: "Industry Reports"
+  category: "FAA / Operations"
   url: "https://www.cirium.com/solutions/emeraldsky-data-and-methodology-for-aircraft-emissions/flight-emissions-review/"
 topic: "Airline emissions efficiency and route-level sustainability"
 noteSlug: "flight-emissions-review-2025"

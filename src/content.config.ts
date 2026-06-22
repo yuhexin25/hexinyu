@@ -9,7 +9,13 @@ const readingNotes = defineCollection({
     source: z.object({
       name: z.string(),
       slug: z.string(),
-      category: z.enum(['Industry Reports', 'News & Analysis', 'Academic Literature']),
+      category: z.enum([
+        'FAA / Operations',
+        'BTS / Delay Data',
+        'Academic Papers',
+        'Airline Networks',
+        'Transportation Geography',
+      ]),
       url: z.string().url(),
     }),
     topic: z.string(),

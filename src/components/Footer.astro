@@ -1,6 +1,10 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p class="footer-theme">Aviation analytics <span>•</span> Transportation systems <span>•</span> Data visualization</p>
+    <div class="footer-academic">
+      <p>Computational Modeling &amp; Data Analytics</p>
+      <span>Virginia Tech</span>
+      <small>Aviation Networks <i>•</i> Transportation Analytics <i>•</i> GIS</small>
+    </div>
     <div class="footer-meta">
       <div class="footer-links">
         <a href="mailto:yuhexin25@vt.edu">Email</a>
@@ -28,19 +32,36 @@
     gap: 48px;
   }
 
-  .footer-theme,
+  .footer-academic,
   .footer-meta p {
     color: #e7e5e4;
   }
 
-  .footer-theme {
+  .footer-academic {
+    display: grid;
+    gap: 4px;
     max-width: 620px;
-    font-weight: 680;
   }
 
-  .footer-theme span {
+  .footer-academic p {
+    color: #fffdf8;
+    font-weight: 760;
+  }
+
+  .footer-academic span {
+    color: #d9e3ef;
+    font-size: 0.88rem;
+  }
+
+  .footer-academic small {
+    margin-top: 7px;
+    color: #e7e5e4;
+  }
+
+  .footer-academic i {
     margin-inline: 5px;
     color: #f6c76f;
+    font-style: normal;
   }
 
   .footer-links {

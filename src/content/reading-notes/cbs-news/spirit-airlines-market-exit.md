@@ -4,7 +4,7 @@ description: "Research note on how Spirit Airlines route exits may affect fares,
 source:
   name: "CBS News"
   slug: "cbs-news"
-  category: "News & Analysis"
+  category: "Airline Networks"
   url: "https://www.cbsnews.com/news/spirit-airlines-tickets-flghts-shutting-down-impact/?utm_source=chatgpt.com"
 topic: "Airline market exit and passenger access"
 noteSlug: "spirit-airlines-market-exit"
