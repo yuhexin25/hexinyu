@@ -136,6 +136,19 @@ const featuredBlogArticle = {
       </a>
     </section>
 
+    <section class="section academic-focus-section" aria-labelledby="academic-focus-heading">
+      <div class="container academic-focus-card">
+        <div>
+          <p class="page-kicker">Academic Focus</p>
+          <h2 id="academic-focus-heading">Aviation systems through data and geography</h2>
+        </div>
+        <div class="academic-focus-copy">
+          <p>I study aviation systems through data, geography, and network thinking.</p>
+          <p>My work explores airline networks, airport connectivity, flight disruptions, and transportation data visualization.</p>
+        </div>
+      </div>
+    </section>
+
     {featuredLibraryNote && (
       <section class="section research-notes-section" aria-labelledby="research-notes-heading">
         <div class="container reading-strip">
@@ -479,6 +492,42 @@ const featuredBlogArticle = {
     padding-block: 38px 68px;
   }
 
+  .academic-focus-section {
+    background: #fff;
+    padding-block: 38px;
+  }
+
+  .academic-focus-card {
+    display: grid;
+    grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding-block: 26px;
+  }
+
+  .academic-focus-card h2 {
+    max-width: 470px;
+    margin-top: 4px;
+    font-size: clamp(1.35rem, 2.4vw, 2rem);
+  }
+
+  .academic-focus-copy {
+    display: grid;
+    gap: 7px;
+  }
+
+  .academic-focus-copy p {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .academic-focus-copy p:first-child {
+    color: var(--text);
+    font-weight: 720;
+  }
+
   .reading-strip h2 a {
     color: var(--text);
   }
@@ -531,6 +580,11 @@ const featuredBlogArticle = {
   }
 
   @media (max-width: 700px) {
+    .academic-focus-card {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
     .reading-strip {
       grid-template-columns: 1fr;
       padding: 24px;
