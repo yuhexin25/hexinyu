@@ -1,22 +1,12 @@
----
-const year = new Date().getFullYear();
----
-
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-main">
-      <p class="footer-title">Hexin Yu</p>
-      <p>
-        Computational Modeling & Data Analytics student at Virginia Tech interested in aviation analytics,
-        transportation systems, data visualization, and network analysis.
-      </p>
-    </div>
+    <p class="footer-theme">Aviation analytics <span>•</span> Transportation systems <span>•</span> Data visualization</p>
     <div class="footer-meta">
       <div class="footer-links">
         <a href="mailto:yuhexin25@vt.edu">Email</a>
         <a href="https://github.com/yuhexin25-oss" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
-      <p>&copy; {year} Hexin Yu</p>
+      <p>&copy; 2026</p>
     </div>
   </div>
 </footer>
@@ -33,25 +23,24 @@ const year = new Date().getFullYear();
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    min-height: 190px;
-    padding: 44px 0;
+    min-height: 142px;
+    padding: 34px 0;
     gap: 48px;
   }
 
-  .footer-main {
-    max-width: 560px;
-  }
-
-  .footer-main p:last-child,
+  .footer-theme,
   .footer-meta p {
     color: #e7e5e4;
   }
 
-  .footer-title {
-    margin-bottom: 10px;
-    color: #fffdf8;
-    font-size: 1.18rem;
-    font-weight: 780;
+  .footer-theme {
+    max-width: 620px;
+    font-weight: 680;
+  }
+
+  .footer-theme span {
+    margin-inline: 5px;
+    color: #f6c76f;
   }
 
   .footer-links {
