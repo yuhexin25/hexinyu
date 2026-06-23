@@ -82,10 +82,10 @@ const projectHref = href && !external ? `${import.meta.env.BASE_URL}${href.repla
       linear-gradient(180deg, rgba(245, 158, 11, 0.07), transparent 42%),
       #fff;
     box-shadow: 0 12px 30px rgba(63, 47, 31, 0.06);
-    padding: 2rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
     white-space: normal;
     word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
     transition:
       transform 180ms ease,
       border-color 180ms ease,
@@ -219,14 +219,14 @@ const projectHref = href && !external ? `${import.meta.env.BASE_URL}${href.repla
     letter-spacing: -0.02em;
     white-space: normal;
     word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
   }
 
   p {
     color: var(--muted);
     white-space: normal;
     word-break: normal;
-    overflow-wrap: normal;
+    overflow-wrap: anywhere;
   }
 
   .research-meta {
@@ -333,7 +333,7 @@ const projectHref = href && !external ? `${import.meta.env.BASE_URL}${href.repla
   }
 
   .project-card--card {
-    min-height: 690px;
+    min-height: 0;
   }
 
   .project-card--card:hover {
@@ -344,11 +344,26 @@ const projectHref = href && !external ? `${import.meta.env.BASE_URL}${href.repla
 
   @media (max-width: 640px) {
     .project-card {
-      padding: 1.5rem;
+      border-radius: 20px;
     }
 
     .project-card--card {
       min-height: auto;
+    }
+
+    .project-title-row {
+      gap: 10px;
+    }
+
+    .project-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+    }
+
+    .project-actions,
+    .project-button {
+      width: 100%;
     }
   }
 </style>

@@ -23,12 +23,24 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
   background: #fffdf8;
   color: var(--text);
   font-size: 16px;
   line-height: 1.68;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -46,7 +58,7 @@ main {
 }
 
 .container {
-  width: min(100% - 40px, var(--max-width));
+  width: min(100% - clamp(28px, 5vw, 40px), var(--max-width));
   margin-inline: auto;
 }
 
@@ -79,7 +91,7 @@ h3 {
 
 h1 {
   max-width: 980px;
-  font-size: clamp(3rem, 8vw, 6.7rem);
+  font-size: clamp(2.55rem, 8vw, 6.7rem);
   font-weight: 780;
   letter-spacing: -0.04em;
 }
@@ -103,7 +115,7 @@ p {
   max-width: 790px;
   margin-top: 24px;
   color: #475569;
-  font-size: clamp(1.08rem, 2vw, 1.28rem);
+  font-size: clamp(1rem, 2vw, 1.28rem);
   line-height: 1.75;
 }
 
@@ -279,5 +291,19 @@ p {
 
   .quiet-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    width: min(100% - 24px, var(--max-width));
+  }
+
+  .button-row {
+    gap: 10px;
+  }
+
+  .button {
+    width: 100%;
   }
 }

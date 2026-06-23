@@ -208,7 +208,7 @@ const currentProjects = [
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: minmax(300px, 0.72fr) minmax(520px, 1.28fr);
+    grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
     gap: clamp(42px, 6vw, 82px);
     align-items: center;
   }
@@ -669,7 +669,7 @@ const currentProjects = [
     }
 
     .featured-projects {
-      border-top: 1px solid rgba(180, 83, 9, 0.18);
+      border-top: 1px solid var(--border);
       border-left: 0;
       padding-top: 28px;
       padding-left: 0;
@@ -704,8 +704,8 @@ const currentProjects = [
     }
 
     .featured-research-image {
-      min-height: 230px;
-      max-height: 300px;
+      min-height: 190px;
+      max-height: 280px;
     }
 
     .reading-meta {
@@ -718,21 +718,28 @@ const currentProjects = [
       padding: 38px 0 42px;
     }
 
+    .hero-copy h1 {
+      font-size: clamp(2.65rem, 14vw, 4rem);
+    }
+
     .featured-projects-heading {
       align-items: start;
+      display: grid;
+      gap: 8px;
     }
 
     .priority-project-card {
-      grid-template-columns: 82px minmax(0, 1fr);
+      grid-template-columns: 1fr;
       gap: 12px;
       min-height: 0;
-      padding-right: 12px;
+      padding: 12px;
     }
 
     .priority-project-card img {
-      width: 82px;
-      height: 112px;
-      grid-row: 1 / span 2;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      grid-row: auto;
     }
 
     .priority-tag-list {
@@ -740,10 +747,33 @@ const currentProjects = [
     }
 
     .view-project {
-      grid-column: 2;
+      grid-column: auto;
       width: fit-content;
-      min-height: 30px;
-      padding: 5px 9px;
+      min-height: 40px;
+      padding: 7px 12px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .hero-section {
+      padding: 32px 0 36px;
+    }
+
+    .hero-copy .button {
+      width: 100%;
+    }
+
+    .current-projects-layout,
+    .research-interests-card {
+      gap: 16px;
+    }
+
+    .featured-research-copy {
+      padding: 18px;
+    }
+
+    .reading-strip {
+      padding: 18px;
     }
   }
 </style>
