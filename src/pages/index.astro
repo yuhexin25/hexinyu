@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import Layout from '../components/Layout.astro';
 
 const base = import.meta.env.BASE_URL;
+// Project thumbnails use live-page screenshots as temporary placeholders.
+// Replace these image paths later with custom cropped screenshots from each project output.
 const featuredProjects = [
   {
     number: '01',
@@ -13,8 +15,8 @@ const featuredProjects = [
     methods: 'Network analysis, MapLibre, D3',
     data: 'FAA, BTS, airline route data',
     href: 'https://yuhexin25-oss.github.io/us-airline-hub-atlas/',
-    image: `${base}project-previews/hub-atlas.svg`,
-    imageAlt: 'Route map preview of the U.S. Airline Hub Atlas.',
+    image: `${base}project-previews/hub-atlas-real.png`,
+    imageAlt: 'Screenshot of the U.S. Airline Hub Atlas showing routes, hub airports, and network metrics.',
     external: true,
   },
   {
@@ -26,8 +28,8 @@ const featuredProjects = [
     methods: 'API integration, dashboard design, delay risk scoring',
     data: 'FAA, FlightAware and public aviation sources',
     href: 'https://yuhexin25-oss.github.io/livedelayanalysis/',
-    image: `${base}project-previews/route-risk.svg`,
-    imageAlt: 'Live flight delay and route risk dashboard preview.',
+    image: `${base}project-previews/live-delay-page.png`,
+    imageAlt: 'Screenshot of the Live Flight Delay Analysis project page showing the Hub Resilience Monitor.',
     external: true,
   },
   {
@@ -39,8 +41,8 @@ const featuredProjects = [
     methods: 'GIS, network visualization, comparative case analysis',
     data: 'FIFA host cities, airline networks, public aviation sources',
     href: `${base}blog/hubs-alliances-world-cup-mobility/`,
-    image: `${base}blog/hubs-alliances-world-cup-mobility-hero.png`,
-    imageAlt: 'North American airline hub network created for the World Cup aviation analysis.',
+    image: `${base}project-previews/world-cup-article-page.png`,
+    imageAlt: 'Screenshot of the World Cup aviation blog article page showing the hubs and alliances analysis.',
     external: false,
   },
 ];
