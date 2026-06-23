@@ -25,9 +25,7 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at 8% 4%, rgba(245, 158, 11, 0.09), transparent 28rem),
-    linear-gradient(180deg, #fffdf8 0%, #fffaf0 100%);
+  background: #fffdf8;
   color: var(--text);
   font-size: 16px;
   line-height: 1.68;
@@ -206,7 +204,7 @@ p {
   color: #1e293b;
   padding: 0 20px;
   font-weight: 720;
-  box-shadow: 0 12px 24px rgba(245, 158, 11, 0.18);
+  box-shadow: none;
   transition:
     transform 160ms ease,
     box-shadow 160ms ease,
@@ -225,8 +223,7 @@ p {
   border-color: var(--gold-dark);
   color: #fff;
   text-decoration: none;
-  transform: translateY(-1px);
-  box-shadow: 0 16px 30px rgba(180, 83, 9, 0.22);
+  box-shadow: none;
 }
 
 .button.secondary:hover {
