@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">DCA planned airspace closure hero graphic</title>
+  <desc id="desc">Original schematic showing Reagan National Airport, the Potomac River, Washington landmarks, and network links to Dulles and Baltimore Washington airports.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#111827"/>
+      <stop offset=".55" stop-color="#172033"/>
+      <stop offset="1" stop-color="#2b241d"/>
+    </linearGradient>
+    <linearGradient id="river" x1="0" x2="1">
+      <stop offset="0" stop-color="#284b63" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#60a5fa" stop-opacity=".18"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <path d="M-40 685 C170 585 280 615 420 520 C565 420 625 345 760 360 C900 375 945 475 1110 455 C1285 433 1395 345 1650 410 L1650 920 L-40 920 Z" fill="url(#river)"/>
+  <path d="M0 350 C160 315 330 330 485 280 C650 227 780 138 970 150 C1150 161 1295 245 1600 205" fill="none" stroke="#f6c76f" stroke-opacity=".12" stroke-width="2"/>
+  <path d="M95 695 C310 450 550 370 760 405 C1040 452 1155 590 1495 505" fill="none" stroke="#60a5fa" stroke-opacity=".2" stroke-width="3"/>
+  <path d="M260 245 C505 520 810 615 1320 610" fill="none" stroke="#f59e0b" stroke-opacity=".24" stroke-width="3"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
+    <path d="M165 145 H1435"/>
+    <path d="M165 245 H1435"/>
+    <path d="M165 345 H1435"/>
+    <path d="M165 445 H1435"/>
+    <path d="M165 545 H1435"/>
+    <path d="M165 645 H1435"/>
+    <path d="M300 80 V770"/>
+    <path d="M500 80 V770"/>
+    <path d="M700 80 V770"/>
+    <path d="M900 80 V770"/>
+    <path d="M1100 80 V770"/>
+    <path d="M1300 80 V770"/>
+  </g>
+  <g transform="translate(705 532) rotate(-18)">
+    <rect x="-14" y="-132" width="28" height="264" rx="14" fill="#e5e7eb"/>
+    <rect x="-6" y="-111" width="12" height="222" rx="6" fill="#111827" opacity=".45"/>
+    <path d="M0 -118 v45 M0 -36 v52 M0 52 v47" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="705" cy="532" r="12" fill="#f59e0b"/>
+    <circle cx="705" cy="532" r="42" fill="#f59e0b" opacity=".12"/>
+    <text x="735" y="525" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="800">DCA</text>
+    <text x="735" y="557" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="18">Reagan National</text>
+  </g>
+  <g fill="#dbeafe" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700">
+    <text x="742" y="328">National Mall / event airspace</text>
+    <text x="570" y="470">Potomac River</text>
+    <text x="585" y="625">Pentagon</text>
+    <text x="885" y="410">Downtown Washington</text>
+  </g>
+  <g>
+    <circle cx="265" cy="245" r="9" fill="#60a5fa"/>
+    <text x="289" y="252" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">IAD</text>
+    <circle cx="1325" cy="610" r="9" fill="#60a5fa"/>
+    <text x="1350" y="617" fill="#e2e8f0" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="800">BWI</text>
+  </g>
+  <g filter="url(#soft)">
+    <circle cx="705" cy="532" r="92" fill="#f59e0b" opacity=".1"/>
+    <circle cx="945" cy="325" r="160" fill="#60a5fa" opacity=".08"/>
+  </g>
+  <g transform="translate(88 92)">
+    <text fill="#f6c76f" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="850" letter-spacing="2">AIRPORT OPERATIONS / NETWORK RESILIENCE</text>
+    <text y="62" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="850">Planned Closure, Network Impact</text>
+    <text y="110" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="25">DCA July 4 airspace constraints as a GIS and aviation systems case</text>
+  </g>
+  <g transform="translate(108 756)">
+    <rect width="390" height="66" rx="22" fill="#fff" opacity=".08"/>
+    <text x="24" y="28" fill="#e5e7eb" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="800">Original schematic visualization</text>
+    <text x="24" y="51" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="14">Not a navigational chart; geography is simplified for analysis.</text>
+  </g>
+</svg>

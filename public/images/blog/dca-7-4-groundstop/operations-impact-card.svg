@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1150 520" role="img" aria-labelledby="title desc">
+  <title id="title">Before during and after flight operations impact</title>
+  <desc id="desc">Three-panel card summarizing DCA flight operations before, during, and after the planned July 4 airspace constraint.</desc>
+  <rect width="1150" height="520" rx="28" fill="#fff"/>
+  <text x="64" y="72" fill="#172033" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="850">Before / During / After: Flight Operations Impact</text>
+  <text x="64" y="107" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="17">The event is planned, but the network still has to absorb schedule compression and recovery.</text>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(64 164)">
+      <rect width="318" height="250" rx="22" fill="#fffdf8" stroke="#e7ded2"/>
+      <text x="28" y="50" fill="#b45309" font-size="15" font-weight="900" letter-spacing="1.5">BEFORE</text>
+      <text x="28" y="92" fill="#172033" font-size="25" font-weight="850">Holiday demand builds</text>
+      <path d="M34 142 H270" stroke="#e7ded2" stroke-width="2"/>
+      <text x="28" y="174" fill="#526071" font-size="16">Fuller flights</text>
+      <text x="28" y="203" fill="#526071" font-size="16">Advance airline adjustments</text>
+      <text x="28" y="232" fill="#526071" font-size="16">Less rebooking flexibility</text>
+    </g>
+    <g transform="translate(416 146)">
+      <rect width="318" height="286" rx="24" fill="#fff1df" stroke="#b45309" stroke-width="2"/>
+      <text x="28" y="56" fill="#7c2d12" font-size="15" font-weight="900" letter-spacing="1.5">DURING</text>
+      <text x="28" y="99" fill="#172033" font-size="25" font-weight="850">Airspace constraint</text>
+      <path d="M34 150 H270" stroke="#d99a2b" stroke-width="2"/>
+      <text x="28" y="184" fill="#334155" font-size="16">No scheduled DCA flights</text>
+      <text x="28" y="212" fill="#334155" font-size="16">after noon on July 4</text>
+      <text x="28" y="240" fill="#334155" font-size="16">July 3 early-afternoon gap</text>
+    </g>
+    <g transform="translate(768 164)">
+      <rect width="318" height="250" rx="22" fill="#f8fbff" stroke="#d9e5f5"/>
+      <text x="28" y="50" fill="#2563eb" font-size="15" font-weight="900" letter-spacing="1.5">AFTER</text>
+      <text x="28" y="92" fill="#172033" font-size="25" font-weight="850">Network recovery</text>
+      <path d="M34 142 H270" stroke="#d9e5f5" stroke-width="2"/>
+      <text x="28" y="174" fill="#526071" font-size="16">Aircraft repositioning</text>
+      <text x="28" y="203" fill="#526071" font-size="16">Crew sequence repair</text>
+      <text x="28" y="232" fill="#526071" font-size="16">Passenger reconnection</text>
+    </g>
+  </g>
+</svg>

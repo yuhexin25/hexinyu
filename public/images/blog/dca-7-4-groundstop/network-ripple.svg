@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1220 520" role="img" aria-labelledby="title desc">
+  <title id="title">Network ripple diagram for DCA closure</title>
+  <desc id="desc">A five-step aviation network diagram showing how paused DCA departures can affect aircraft rotation, crew scheduling, downstream delay risk, and passenger rebooking.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect width="1220" height="520" rx="28" fill="#172033"/>
+  <path d="M75 410 C250 270 404 335 560 232 C720 125 870 196 1110 115" fill="none" stroke="#60a5fa" stroke-opacity=".16" stroke-width="20" stroke-linecap="round"/>
+  <path d="M75 410 C250 270 404 335 560 232 C720 125 870 196 1110 115" fill="none" stroke="#60a5fa" stroke-opacity=".35" stroke-width="3" stroke-linecap="round"/>
+  <text x="64" y="72" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="850">Network Ripple: From DCA Closure to System Recovery</text>
+  <text x="64" y="106" fill="#cbd5e1" font-family="Inter, Arial, sans-serif" font-size="17">The visible event is a local ground stop. The operational effect can travel through schedules.</text>
+  <g fill="none" stroke="#b45309" stroke-width="3" marker-end="url(#arrow)" opacity=".88">
+    <path d="M252 286 H339"/>
+    <path d="M474 286 H561"/>
+    <path d="M696 286 H783"/>
+    <path d="M918 286 H1005"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(62 220)">
+      <rect width="190" height="132" rx="22" fill="#fff7ed" stroke="#f59e0b"/>
+      <text x="95" y="48" text-anchor="middle" fill="#7c2d12" font-size="18" font-weight="850">DCA departures</text>
+      <text x="95" y="76" text-anchor="middle" fill="#7c2d12" font-size="18" font-weight="850">paused</text>
+      <text x="95" y="105" text-anchor="middle" fill="#64748b" font-size="13">local constraint</text>
+    </g>
+    <g transform="translate(284 220)">
+      <rect width="190" height="132" rx="22" fill="#202d48" stroke="#425474"/>
+      <text x="95" y="48" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">Aircraft</text>
+      <text x="95" y="76" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">rotation changes</text>
+      <text x="95" y="105" text-anchor="middle" fill="#a9b9cf" font-size="13">fleet sequence</text>
+    </g>
+    <g transform="translate(506 220)">
+      <rect width="190" height="132" rx="22" fill="#202d48" stroke="#425474"/>
+      <text x="95" y="48" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">Crew scheduling</text>
+      <text x="95" y="76" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">pressure</text>
+      <text x="95" y="105" text-anchor="middle" fill="#a9b9cf" font-size="13">duty limits</text>
+    </g>
+    <g transform="translate(728 220)">
+      <rect width="190" height="132" rx="22" fill="#202d48" stroke="#425474"/>
+      <text x="95" y="48" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">Downstream</text>
+      <text x="95" y="76" text-anchor="middle" fill="#fff" font-size="18" font-weight="850">delay risk</text>
+      <text x="95" y="105" text-anchor="middle" fill="#a9b9cf" font-size="13">other airports</text>
+    </g>
+    <g transform="translate(950 220)">
+      <rect width="190" height="132" rx="22" fill="#fff7ed" stroke="#f59e0b"/>
+      <text x="95" y="48" text-anchor="middle" fill="#7c2d12" font-size="18" font-weight="850">Passenger</text>
+      <text x="95" y="76" text-anchor="middle" fill="#7c2d12" font-size="18" font-weight="850">rebooking</text>
+      <text x="95" y="105" text-anchor="middle" fill="#64748b" font-size="13">itinerary repair</text>
+    </g>
+  </g>
+  <text x="64" y="456" fill="#94a3b8" font-family="Inter, Arial, sans-serif" font-size="14">Conceptual network diagram. It shows operational pathways, not a causal measurement of July 2026 delays.</text>
+</svg>

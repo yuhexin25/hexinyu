@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">DCA location map relative to Washington region airports</title>
+  <desc id="desc">Original schematic map showing DCA beside the Potomac River and its relationship to Washington DC, the National Mall, Pentagon, IAD, and BWI.</desc>
+  <defs>
+    <linearGradient id="land" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#fffdf8"/>
+      <stop offset="1" stop-color="#f3f7fb"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto">
+      <path d="M0 0 L9 4.5 L0 9 Z" fill="#b45309"/>
+    </marker>
+  </defs>
+  <rect width="1100" height="720" rx="26" fill="url(#land)"/>
+  <path d="M342 720 C300 585 385 514 425 435 C474 337 458 250 555 188 C655 124 724 78 742 0 L854 0 C824 125 734 180 641 248 C530 329 528 438 480 520 C430 604 434 664 472 720 Z" fill="#cfe9f8"/>
+  <path d="M383 716 C346 594 431 528 470 448 C520 347 501 268 591 209 C682 150 746 92 762 0" fill="none" stroke="#60a5fa" stroke-width="5" stroke-opacity=".55"/>
+  <g stroke="#d6d3d1" stroke-width="2" stroke-opacity=".75" fill="none">
+    <path d="M610 235 L760 230 L862 275"/>
+    <path d="M545 294 L750 337 L900 330"/>
+    <path d="M515 392 L710 407 L910 472"/>
+    <path d="M255 502 L432 478 L608 510"/>
+    <path d="M167 249 L333 318 L470 390"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif">
+    <g transform="translate(512 438)">
+      <circle r="16" fill="#b45309"/>
+      <circle r="42" fill="#f59e0b" opacity=".18"/>
+      <text x="27" y="-4" fill="#1e293b" font-size="24" font-weight="850">DCA</text>
+      <text x="27" y="21" fill="#64748b" font-size="15">Reagan National</text>
+    </g>
+    <g transform="translate(204 506)">
+      <circle r="12" fill="#2563eb"/>
+      <text x="23" y="5" fill="#1e293b" font-size="20" font-weight="850">IAD</text>
+      <text x="23" y="27" fill="#64748b" font-size="14">Dulles</text>
+    </g>
+    <g transform="translate(880 238)">
+      <circle r="12" fill="#2563eb"/>
+      <text x="22" y="5" fill="#1e293b" font-size="20" font-weight="850">BWI</text>
+      <text x="22" y="27" fill="#64748b" font-size="14">Baltimore/Washington</text>
+    </g>
+    <g fill="#334155" font-size="17" font-weight="780">
+      <text x="642" y="278">National Mall</text>
+      <text x="548" y="382">Pentagon</text>
+      <text x="718" y="357">Downtown Washington</text>
+      <text x="386" y="318">Potomac River</text>
+    </g>
+  </g>
+  <g fill="none" stroke="#b45309" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 9" marker-end="url(#arrow)" opacity=".72">
+    <path d="M512 438 C410 440 332 472 214 506"/>
+    <path d="M512 438 C642 335 736 276 873 240"/>
+  </g>
+  <g transform="translate(56 54)" font-family="Inter, Arial, sans-serif">
+    <text fill="#172033" font-size="30" font-weight="850">DCA in the Washington Aviation Region</text>
+    <text y="34" fill="#64748b" font-size="16">A simplified geographic schematic for airport operations analysis.</text>
+  </g>
+  <g transform="translate(56 622)" font-family="Inter, Arial, sans-serif">
+    <rect width="465" height="52" rx="17" fill="#fff" stroke="#e7ded2"/>
+    <circle cx="24" cy="26" r="7" fill="#b45309"/><text x="41" y="31" fill="#64748b" font-size="14">Primary affected airport</text>
+    <circle cx="230" cy="26" r="7" fill="#2563eb"/><text x="247" y="31" fill="#64748b" font-size="14">Regional alternatives</text>
+  </g>
+</svg>
