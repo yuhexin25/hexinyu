@@ -1,0 +1,173 @@
+---
+import BlogArticle from '../../components/BlogArticle.astro';
+
+const base = import.meta.env.BASE_URL;
+const timeline = [
+  { date: 'June 24-25', label: 'State Fair opening', level: 'minor' },
+  { date: 'June 28', label: 'Military Appreciation Day', level: 'minor' },
+  { date: 'July 3', label: 'Early-afternoon flight gap', level: 'major' },
+  { date: 'July 4', label: 'No scheduled flights after noon', level: 'critical' },
+  { date: 'July 5', label: 'Normal operations expected', level: 'recovery' },
+  { date: 'July 10', label: 'Closeout flyover / jump', level: 'minor' },
+  { date: 'Aug. 22-23', label: 'Grand Prix near National Mall', level: 'minor' },
+];
+
+const disruptionRows = [
+  ['Weather delay', 'Low to medium', 'Limited before forecast confidence improves', 'High when storms hit hubs'],
+  ['Airline operational delay', 'Medium', 'Depends on airline reaccommodation capacity', 'Medium to high'],
+  ['ATC / FAA flow control', 'Medium to high', 'Often visible through NAS Status advisories', 'High at constrained airports'],
+  ['Planned event-driven closure', 'High', 'High before the event, lower during closure window', 'High if aircraft and crews are displaced'],
+];
+---
+
+<BlogArticle
+  title="When Celebration Stops an Airport: DCA's July 4 Ground Stop and the Network Impact of Planned Airspace Closures"
+  subtitle="A planned holiday airspace closure at Reagan National shows how public events, security coordination, and dense airline schedules can temporarily reshape an airport network."
+  category="Airport Operations"
+  date="June 24, 2026"
+  readingTime="9 min read"
+  tags={['Aviation','FAA','DCA','Airspace','Airport Operations','Network Resilience','Data Visualization']}
+  image={`${base}blog/dca-july-4-ground-stop-network-impact.svg`}
+  imageAlt="Abstract runway and airspace network graphic for DCA July 4 ground stop analysis"
+>
+  <p class="lead">The most interesting aviation disruption in Washington this July is not a thunderstorm, a mechanical failure, or an airline scheduling mistake. It is a celebration.</p>
+
+  <p>Ronald Reagan Washington National Airport will operate around a planned airspace constraint for America 250 events in downtown Washington, D.C. According to the Metropolitan Washington Airports Authority, no DCA flights are scheduled after noon on July 4, 2026, and no DCA flights are scheduled for several hours in the early afternoon of July 3. Normal flight operations are expected to resume July 5.</p>
+  <p>That distinction matters. The terminal is not simply disappearing from the transportation system. FlyReagan says airport terminals will remain open and operational during these events, although MWAA says terminal services will operate at reduced capacity until flights resume. The operational constraint is on flight movement: runway use, airspace availability, and air traffic control coordination around flyovers, fireworks, parachute jumps, and security-sensitive public events near the National Mall.</p>
+
+  <h2>What actually happens at DCA?</h2>
+  <p>MWAA's official release frames the summer schedule changes as a set of pre-planned aviation impacts tied to downtown events. The affected dates include June 24-25, June 28, July 3-4, July 10, and August 22-23. The July 3 and July 4 windows are the most significant because they coincide with Independence Day rehearsals, performances, and fireworks.</p>
+  <p>Local reporting from WJLA repeats the operational pattern: DCA officials expect the FAA may temporarily issue ground stops during some America 250 events, while terminals remain open. The Washington Post reported that no departures are scheduled after noon on July 4, and that FAA traffic-management initiatives will be used before, during, and after the event. In that sense, this is not a surprise failure. It is a scheduled pause in the airport's ability to move aircraft.</p>
+
+  <figure class="event-timeline" aria-labelledby="timeline-title">
+    <h3 id="timeline-title">Event Timeline: Planned DCA Flight Constraints</h3>
+    <div class="timeline-track">
+      {timeline.map((item) => (
+        <div class:list={['timeline-item', `timeline-${item.level}`]}>
+          <span>{item.date}</span>
+          <strong>{item.label}</strong>
+        </div>
+      ))}
+    </div>
+    <figcaption>Dates from MWAA and FlyReagan public advisories. July 3 and July 4 carry the strongest flight-operations signal.</figcaption>
+  </figure>
+
+  <h2>Why this is different from a normal July 4 delay</h2>
+  <p>Holiday travel usually stresses the system through demand: full flights, full terminals, full roads, and less flexibility when something goes wrong. The DCA case adds a different mechanism. Demand is high, but the central constraint is planned airspace availability.</p>
+  <p>A weather delay often starts as uncertainty. A ground stop for thunderstorms can appear, expand, shrink, or move with the storm line. An airline operational delay may emerge from crew legality, maintenance, or aircraft availability. The DCA July 4 case is more predictable. Airlines can remove or move flights ahead of time. Passengers can be warned. FAA traffic-management initiatives can be planned around specific event windows.</p>
+  <p>But predictability does not mean the network impact disappears. It changes the shape of the disruption. Instead of surprise congestion, the system faces schedule compression, aircraft and crew repositioning, and passenger spillover into nearby airports or non-air modes.</p>
+
+  <figure class="impact-card" aria-labelledby="impact-title">
+    <h3 id="impact-title">Flight Operations Impact</h3>
+    <div>
+      <article>
+        <span>Before</span>
+        <strong>Holiday demand builds</strong>
+        <p>High passenger volume, limited rebooking flexibility, and airline schedules adjusted around expected restrictions.</p>
+      </article>
+      <article class="active">
+        <span>During</span>
+        <strong>Runway / airspace constraint</strong>
+        <p>No scheduled DCA flights after noon July 4; several hours without scheduled flights early afternoon July 3.</p>
+      </article>
+      <article>
+        <span>After</span>
+        <strong>Recovery and repositioning</strong>
+        <p>Aircraft, crews, and passengers must reconnect to the normal schedule once DCA operations resume July 5.</p>
+      </article>
+    </div>
+  </figure>
+
+  <h2>DCA's geography makes it unusually exposed</h2>
+  <p>DCA is not a remote airfield separated from the city it serves. It sits next to the Potomac River, close to downtown Washington, the National Mall, federal airspace restrictions, and some of the most symbolically important public spaces in the United States. That geography is exactly why passengers like the airport: it is convenient, central, and rail-connected. It is also why public events can reach directly into airport operations.</p>
+  <p>For aviation analysis, this is a useful reminder that airport reliability is not only an internal airport problem. A runway can be physically usable while the surrounding airspace becomes temporarily unavailable for scheduled commercial operations. A terminal can remain open while departures and arrivals are paused. A city can be celebrating while the flight network absorbs the operational consequences.</p>
+
+  <figure class="spillover" aria-labelledby="spillover-title">
+    <h3 id="spillover-title">Regional Spillover Paths</h3>
+    <div class="spillover-map">
+      <div class="node center">DCA</div>
+      <div class="node iad">IAD</div>
+      <div class="node bwi">BWI</div>
+      <div class="node rail">Amtrak / rail</div>
+      <div class="node road">Road travel</div>
+      <svg viewBox="0 0 760 320" aria-hidden="true">
+        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" /></marker></defs>
+        <path d="M380 160 C 265 95, 205 85, 125 82" />
+        <path d="M380 160 C 520 85, 590 78, 675 88" />
+        <path d="M380 160 C 262 230, 206 242, 112 245" />
+        <path d="M380 160 C 515 235, 580 246, 665 245" />
+      </svg>
+    </div>
+    <figcaption>Passenger choices may shift toward Dulles, BWI, rail, or road. This is a conceptual spillover diagram, not measured passenger flow.</figcaption>
+  </figure>
+
+  <h2>Network impact: not just cancellations</h2>
+  <p>When a planned closure removes a block of flights, the visible effect is cancellations or schedule adjustments. The less visible effect is network geometry. An aircraft that would have arrived at DCA may be needed for a later flight somewhere else. A crew sequence may depend on an aircraft arriving before the duty clock runs out. A passenger itinerary may depend on a connection beyond Washington.</p>
+  <p>For DCA, those effects are especially interesting because the airport is a major domestic node for American Airlines and a high-demand airport for short-haul business and government travel. The Washington Post reported that American had adjusted its July 3 and July 4 schedule due to FAA restrictions and notified affected customers. Reuters and local D.C. outlets also framed the event as a passenger-facing schedule problem, not merely an airspace footnote.</p>
+
+  <figure class="ripple" aria-labelledby="ripple-title">
+    <h3 id="ripple-title">Network Ripple Diagram</h3>
+    <div class="ripple-steps">
+      <span>DCA departures paused</span>
+      <i>→</i>
+      <span>Aircraft rotation changes</span>
+      <i>→</i>
+      <span>Crew scheduling pressure</span>
+      <i>→</i>
+      <span>Downstream delay risk</span>
+      <i>→</i>
+      <span>Passenger rebooking</span>
+    </div>
+  </figure>
+
+  <h2>How FAA data can capture this disruption</h2>
+  <p>The FAA National Airspace System Status page is the operational data source I would watch for this type of event. It publishes airport-level constraints such as ground stops, ground delay programs, arrival and departure delays, and other traffic-management initiatives. For a live dashboard, that matters because the event has a different signature from weather. The signal is not a surprise storm cell; it is a known airport and airspace constraint that can be annotated before the day begins.</p>
+  <p>A useful aviation data system should therefore separate at least four disruption types: weather delay, airline operational delay, ATC or FAA flow control, and planned event-driven closure. Each has a different level of predictability, passenger flexibility, and network ripple risk.</p>
+
+  <figure class="disruption-table" aria-labelledby="table-title">
+    <h3 id="table-title">Disruption Types and Data Signals</h3>
+    <div role="table" aria-label="Comparison of aviation disruption types">
+      <div role="row"><strong>Type</strong><strong>Predictability</strong><strong>Passenger flexibility</strong><strong>Network ripple risk</strong></div>
+      {disruptionRows.map((row) => (
+        <div role="row">{row.map((cell) => <span>{cell}</span>)}</div>
+      ))}
+    </div>
+  </figure>
+
+  <h2>What this means for my aviation data projects</h2>
+  <p>This DCA case fits naturally into my ongoing aviation research agenda. In the <a href="https://yuhexin25.github.io/livedelayanalysis/">Live Delay Analysis</a> project, it could become a special-event disruption layer: a planned constraint tagged before the operational day, then compared against FAA NAS Status updates as the event unfolds.</p>
+  <p>In my <a href="https://yuhexin25.github.io/usflightdelay/">U.S. Flight Delay Analysis</a>, the case raises a historical classification question. If a flight is canceled or delayed during a known airspace closure, it should not be interpreted the same way as a random carrier delay or a thunderstorm delay. The cause category matters for analysis.</p>
+  <p>The <a href="https://yuhexin25.github.io/us-airline-hub-atlas/">U.S. Airline Hub Atlas</a> adds the network perspective. DCA may be geographically small compared with larger hubs, but its centrality in specific airline schedules, government travel patterns, and Northeast corridor mobility gives it a ripple footprint beyond its runway length or terminal size.</p>
+
+  <h2>Closing</h2>
+  <p>Planned closures are not operational failures. They are deliberate safety and security decisions made when public events, ceremonial airspace use, and commercial aviation share the same geography.</p>
+  <p>But they still reveal fragility. Dense airport networks work because aircraft, crews, passengers, runways, and airspace are synchronized tightly. When a national celebration pauses one airport's flight operations, the network has to absorb that pause through cancellations, schedule compression, rebooking, and regional substitution. DCA's July 4 ground stop is therefore more than a travel advisory. It is a compact case study in airport geography, FAA flow control, and aviation network resilience.</p>
+
+  <h2>Sources</h2>
+  <ol class="reference-list">
+    <li><a href="https://www.mwaa.com/news/flight-schedule-adjustments-expected-summer">MWAA: Flight Schedule Adjustments Expected this Summer</a></li>
+    <li><a href="https://www.flyreagan.com/america250">FlyReagan: Celebrating America's 250th</a></li>
+    <li><a href="https://nasstatus.faa.gov/">FAA National Airspace System Status</a> and <a href="https://nasstatus.faa.gov/list">NAS Status list view</a></li>
+    <li><a href="https://www.reuters.com/world/us/washington-airport-will-halt-operations-much-july-4th-2026-06-16/">Reuters: Washington airport will halt operations for much of July 4</a></li>
+    <li><a href="https://www.nbcwashington.com/news/local/flights-at-reagan-national-airport-to-stop-after-noon-on-july-4/4117679/">NBC Washington: Flights at Reagan National Airport to stop after noon on July 4</a></li>
+    <li><a href="https://www.washingtonpost.com/dc-md-va/2026/06/16/dca-flights-be-halted-parts-july-3-july-4/">The Washington Post: DCA flights to be halted for parts of July 3 and July 4</a></li>
+    <li><a href="https://wjla.com/news/local/heres-when-dcas-reagan-national-airport-runways-will-be-closed-and-flights-delayed-for-july-4-america-250-events-june-2026">WJLA: DCA runway closures and flight delays for America 250 events</a></li>
+    <li><a href="https://www.thetravel.com/ronald-reagan-washington-national-airport-temporary-faa-ground-stop-july-4/">TheTravel: Ronald Reagan Washington National Airport temporary FAA ground stop</a></li>
+  </ol>
+</BlogArticle>
+
+<style is:global>
+  .event-timeline,.impact-card,.spillover,.ripple,.disruption-table{border:1px solid var(--border);border-radius:18px;background:#fff;padding:22px;box-shadow:0 10px 26px rgba(63,47,31,.045)}
+  .event-timeline h3,.impact-card h3,.spillover h3,.ripple h3,.disruption-table h3{margin:0 0 18px!important;font-size:1.15rem!important}
+  .timeline-track{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px;position:relative}
+  .timeline-item{display:grid;gap:7px;border:1px solid #e5e1da;border-radius:14px;background:#fffdf8;padding:12px;min-height:108px}
+  .timeline-item span{color:#8a7c6b;font-size:.72rem;font-weight:800;text-transform:uppercase}
+  .timeline-item strong{color:#334155;font-size:.84rem;line-height:1.35}
+  .timeline-major{border-color:#d99a2b;background:#fff7ed}.timeline-critical{border-color:#b45309;background:#fff1df;box-shadow:inset 0 0 0 2px rgba(180,83,9,.12)}.timeline-recovery{border-color:#8bb69b;background:#f4fbf6}
+  .impact-card>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.impact-card article{border:1px solid var(--border);border-radius:15px;background:#fffdf8;padding:16px}.impact-card article.active{border-color:#b45309;background:#fff7ed}.impact-card span{color:#b45309;font-size:.72rem;font-weight:850;text-transform:uppercase}.impact-card strong{display:block;margin-top:6px;color:#1e293b}.impact-card p{margin-top:8px!important;color:#64748b!important;font-family:inherit!important;font-size:.84rem!important;line-height:1.55!important}
+  .spillover-map{position:relative;min-height:320px;border:1px solid #e5e1da;border-radius:16px;background:linear-gradient(135deg,#fffdf8,#f8fbff);overflow:hidden}.spillover-map svg{position:absolute;inset:0;width:100%;height:100%;fill:#b45309;stroke:#b45309;stroke-width:2;stroke-linecap:round;marker-end:url(#arrow);opacity:.45}.node{position:absolute;z-index:1;display:grid;place-items:center;border:1px solid #d6d3d1;border-radius:999px;background:#fff;color:#334155;padding:10px 14px;font-weight:800;box-shadow:0 8px 20px rgba(63,47,31,.06)}.node.center{left:50%;top:50%;transform:translate(-50%,-50%);border-color:#b45309;background:#fff7ed;color:#7c2d12;font-size:1.2rem}.node.iad{left:8%;top:20%}.node.bwi{right:8%;top:22%}.node.rail{left:7%;bottom:19%}.node.road{right:8%;bottom:19%}
+  .ripple-steps{display:flex;flex-wrap:wrap;align-items:center;gap:10px}.ripple-steps span{flex:1 1 150px;border:1px solid var(--border);border-radius:14px;background:#fffdf8;padding:13px;color:#334155;font-weight:760;text-align:center}.ripple-steps i{color:#b45309;font-style:normal;font-weight:900}
+  .disruption-table>div{overflow-x:auto;border:1px solid var(--border);border-radius:14px}.disruption-table [role=row]{display:grid;grid-template-columns:1.05fr 1fr 1.35fr 1.15fr;min-width:720px;border-top:1px solid var(--border)}.disruption-table [role=row]:first-child{border-top:0;background:#172033}.disruption-table strong,.disruption-table span{padding:12px 14px;font-family:inherit!important;font-size:.82rem!important;line-height:1.45!important}.disruption-table strong{color:#fff}.disruption-table span{color:#526071}
+  @media(max-width:820px){.timeline-track{grid-template-columns:repeat(2,minmax(0,1fr))}.impact-card>div{grid-template-columns:1fr}.spillover-map{min-height:360px}.ripple-steps{display:grid}.ripple-steps i{transform:rotate(90deg);text-align:center}.disruption-table [role=row]{min-width:650px}}
+  @media(max-width:480px){.event-timeline,.impact-card,.spillover,.ripple,.disruption-table{padding:16px}.timeline-track{grid-template-columns:1fr}.spillover-map{min-height:380px}.node{font-size:.82rem;padding:8px 10px}.node.center{font-size:1rem}.node.iad{left:6%;top:16%}.node.bwi{right:6%;top:17%}.node.rail{left:6%;bottom:16%}.node.road{right:6%;bottom:16%}}
+</style>
