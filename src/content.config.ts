@@ -23,6 +23,7 @@ const readingNotes = defineCollection({
     sourceTitle: z.string(),
     authors: z.string().optional(),
     sourceDate: z.string().optional(),
+    dateAdded: z.union([z.string(), z.date()]).optional(),
     journal: z.string().optional(),
     year: z.union([z.string(), z.number()]).optional(),
     doi: z.string().optional(),

@@ -11,6 +11,7 @@ noteSlug: "modelling-air-transport-complex-networks"
 sourceTitle: "Modelling the air transport with complex networks: A short review"
 authors: "Massimiliano Zanin & Fabrizio Lillo"
 sourceDate: "2013"
+dateAdded: "2026-06-25"
 journal: "European Physical Journal Special Topics"
 year: 2013
 doi: "10.1140/epjst/e2013-01711-9"

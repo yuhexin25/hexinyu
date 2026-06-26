@@ -57,9 +57,17 @@ const featuredProjects = [
     external: false,
   },
 ];
-const readingNotes = (await getCollection('reading-notes')).sort(
-  (a, b) => `${a.data.source.name} ${a.data.title}`.localeCompare(`${b.data.source.name} ${b.data.title}`),
-);
+const unsortedReadingNotes = await getCollection('reading-notes');
+const noteDateValue = (note: (typeof unsortedReadingNotes)[number]) => {
+  const rawDate = note.data.dateAdded ?? note.data.sourceDate ?? note.data.year ?? '';
+  const parsed = new Date(rawDate);
+  if (!Number.isNaN(parsed.valueOf())) return parsed.valueOf();
+  const year = Number(rawDate);
+  return Number.isFinite(year) ? Date.UTC(year, 0, 1) : 0;
+};
+const readingNotes = unsortedReadingNotes
+  .slice()
+  .sort((a, b) => noteDateValue(b) - noteDateValue(a) || a.data.title.localeCompare(b.data.title));
 const featuredLibraryNote = readingNotes[0];
 const featuredLibraryHref = featuredLibraryNote
   ? `${base}reading-notes/${featuredLibraryNote.data.source.slug}/${featuredLibraryNote.data.noteSlug}`
@@ -196,18 +204,18 @@ const currentProjects = [
     </section>
 
     {featuredLibraryNote && (
-      <section class="section research-notes-section" aria-labelledby="research-notes-heading">
+      <section class="section reading-notes-section" aria-labelledby="reading-notes-heading">
         <div class="container reading-strip">
           <div>
-            <p class="page-kicker" id="research-notes-heading">Research Notes</p>
+            <p class="page-kicker" id="reading-notes-heading">Reading Notes</p>
             <h2>
               <a href={featuredLibraryHref}>{featuredLibraryNote.data.title}</a>
             </h2>
             <p>{featuredLibraryNote.data.description}</p>
           </div>
           <div class="reading-meta">
-            <span>{featuredLibraryNote.data.source.name}</span>
-            <a class="text-link" href={`${base}reading-notes`}>Open library -></a>
+            <span>{featuredLibraryNote.data.source.category} · {featuredLibraryNote.data.source.name}</span>
+            <a class="text-link" href={`${base}reading-notes`}>Open Reading Notes -></a>
           </div>
         </div>
       </section>
@@ -651,7 +659,7 @@ const currentProjects = [
     padding: 20px;
   }
 
-  .research-notes-section {
+  .reading-notes-section {
     padding-block: 30px 64px;
   }
 
