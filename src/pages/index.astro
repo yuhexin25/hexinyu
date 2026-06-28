@@ -109,7 +109,6 @@ const currentProjects = [
       <section class="featured-projects" aria-labelledby="featured-projects-heading">
         <div class="featured-projects-heading">
           <h2 id="featured-projects-heading">Selected Work</h2>
-          <a href={`${base}projects`}>All projects <span aria-hidden="true">→</span></a>
         </div>
         <div class="featured-project-list">
           {featuredProjects.map((project) => (
@@ -313,23 +312,11 @@ const currentProjects = [
   }
 
   .featured-projects-heading {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: end;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   .featured-projects-heading h2 {
     font-size: clamp(1.55rem, 2.4vw, 2.1rem);
-  }
-
-  .featured-projects-heading > a {
-    flex: 0 0 auto;
-    margin-bottom: 5px;
-    color: #475569;
-    font-size: 0.86rem;
-    font-weight: 760;
   }
 
   .featured-project-list {
