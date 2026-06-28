@@ -1,100 +1,27 @@
 <footer class="site-footer">
   <div class="container footer-inner">
-    <div class="footer-academic">
-      <p>Computational Modeling &amp; Data Analytics</p>
-      <span>Virginia Tech</span>
-      <small>Aviation Networks <i>•</i> Transportation Analytics <i>•</i> GIS</small>
-    </div>
-    <div class="footer-meta">
-      <div class="footer-links">
-        <a href="mailto:yuhexin25@vt.edu">Email</a>
-        <a href="https://github.com/yuhexin25" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </div>
-      <p>&copy; 2026</p>
-    </div>
+    <a href="mailto:yuhexin25@vt.edu">Email</a>
+    <a href="https://github.com/yuhexin25" target="_blank" rel="noopener noreferrer">GitHub</a>
   </div>
 </footer>
 
 <style>
   .site-footer {
     border-top: 1px solid var(--border);
-    background:
-      linear-gradient(135deg, #3f2f1f 0%, #1e293b 100%);
-    color: var(--muted);
+    background: #fffdf8;
   }
 
   .footer-inner {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    min-height: 142px;
-    padding: 34px 0;
-    gap: 48px;
-  }
-
-  .footer-academic,
-  .footer-meta p {
-    color: #e7e5e4;
-  }
-
-  .footer-academic {
-    display: grid;
-    gap: 4px;
-    max-width: 620px;
-  }
-
-  .footer-academic p {
-    color: #fffdf8;
-    font-weight: 760;
-  }
-
-  .footer-academic span {
-    color: #d9e3ef;
-    font-size: 0.88rem;
-  }
-
-  .footer-academic small {
-    margin-top: 7px;
-    color: #e7e5e4;
-  }
-
-  .footer-academic i {
-    margin-inline: 5px;
-    color: #f6c76f;
-    font-style: normal;
-  }
-
-  .footer-links {
-    display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .footer-links a {
-    color: #fef3c7;
-  }
-
-  .footer-links a:hover {
-    color: #ffffff;
-  }
-
-  .footer-meta {
-    display: grid;
-    justify-items: end;
+    align-items: center;
     gap: 18px;
+    padding: 24px 0;
   }
 
-  @media (max-width: 640px) {
-    .footer-inner {
-      align-items: flex-start;
-      flex-direction: column;
-      justify-content: center;
-      padding: 34px 0;
-      gap: 24px;
-    }
-
-    .footer-meta {
-      justify-items: start;
-    }
+  .footer-inner a {
+    color: #475569;
+    font-size: 0.94rem;
+    font-weight: 650;
   }
 </style>
