@@ -1,9 +1,9 @@
 ---
 import Layout from '../components/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
-import { projectsByYear } from '../data/projects';
+import { projects } from '../data/projects';
 
-const years = Object.keys(projectsByYear).sort((a, b) => Number(b) - Number(a));
+const projectList = projects.slice().sort((a, b) => Number(b.year) - Number(a.year) || a.title.localeCompare(b.title));
 ---
 
 <Layout
@@ -13,29 +13,21 @@ const years = Object.keys(projectsByYear).sort((a, b) => Number(b) - Number(a));
   <div class="projects-page">
     <header class="projects-container page-intro projects-intro">
       <p class="page-kicker">Projects</p>
-      <h1>Curated project archive</h1>
+      <h1>Projects</h1>
       <p class="lead">
-        Each project is a working answer to one question: how can data help us understand aviation networks,
-        flight disruptions, and transportation systems?
+        Interactive tools and data projects for aviation networks, flight disruptions, and transportation systems.
       </p>
     </header>
 
-    <div class="projects-container year-groups">
-      {years.map((year) => (
-        <section class="year-group" aria-labelledby={`year-${year}`}>
-          <h2 id={`year-${year}`}>{year}</h2>
-          <div class="projects-grid">
-            {projectsByYear[year].map((project) => <ProjectCard {...project} variant="card" />)}
-          </div>
-        </section>
-      ))}
+    <div class="projects-container projects-grid">
+      {projectList.map((project) => <ProjectCard {...project} variant="card" />)}
     </div>
   </div>
 </Layout>
 
 <style>
   .projects-page {
-    max-width: 1100px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: clamp(3rem, 6vw, 4rem) clamp(1rem, 4vw, 1.5rem);
   }
@@ -45,30 +37,14 @@ const years = Object.keys(projectsByYear).sort((a, b) => Number(b) - Number(a));
   }
 
   .projects-intro {
-    max-width: 900px;
-  }
-
-  .year-groups {
-    display: grid;
-    gap: 3rem;
-  }
-
-  .year-group {
-    display: grid;
-    gap: 1.25rem;
-  }
-
-  .year-group h2 {
-    color: var(--gold-dark);
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    font-size: 1.05rem;
-    font-weight: 760;
+    max-width: 760px;
+    margin-bottom: 28px;
   }
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: clamp(1.25rem, 3vw, 2rem);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 18px;
   }
 
   @media (max-width: 720px) {

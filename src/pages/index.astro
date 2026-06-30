@@ -20,8 +20,6 @@ const latestReadingNote = readingNotes
 const latestReadingNoteHref = latestReadingNote
   ? `${base}reading-notes/${latestReadingNote.data.source.slug}/${latestReadingNote.data.noteSlug}/`
   : `${base}reading-notes/`;
-// Project thumbnails use live-page screenshots as temporary placeholders.
-// Replace these image paths later with custom cropped screenshots from each project output.
 const featuredProjects = [
   {
     title: 'U.S. Airline Hub Atlas',
@@ -43,11 +41,13 @@ const featuredProjects = [
     imageAlt: 'Screenshot of the Live Flight Delay Analysis project page showing the Hub Resilience Monitor.',
     external: true,
   },
+];
+const featuredWriting = [
   {
-    title: 'World Cup Air Travel Network',
-    type: 'Research Article',
-    description: 'Analysis of fan mobility and airline network responses during FIFA World Cup 2026.',
-    tags: ['GIS', 'Network Analysis', 'World Cup'],
+    title: 'Hubs, Alliances, and World Cup Mobility',
+    type: 'Blog / Research Writing',
+    description: 'How World Cup travel temporarily reweights passenger flows across airline alliances and hubs.',
+    tags: ['Aviation Networks', 'World Cup', 'Writing'],
     href: `${base}blog/hubs-alliances-world-cup-mobility/`,
     image: `${base}project-previews/world-cup-article-page.png`,
     imageAlt: 'Screenshot of the World Cup aviation blog article page showing the hubs and alliances analysis.',
@@ -74,7 +74,7 @@ const featuredProjects = [
       </div>
       <section class="featured-projects" aria-labelledby="featured-projects-heading">
         <div class="featured-projects-heading">
-          <h2 id="featured-projects-heading">Selected Work</h2>
+          <h2 id="featured-projects-heading">Selected Projects</h2>
         </div>
         <div class="featured-project-list">
           {featuredProjects.map((project) => (
@@ -91,6 +91,30 @@ const featuredProjects = [
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <ul class="priority-tag-list" aria-label={`${project.title} methods and data`}>
+                  {project.tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div class="featured-projects-heading writing-heading">
+          <h2>Selected Writing</h2>
+        </div>
+        <div class="featured-project-list">
+          {featuredWriting.map((project) => (
+            <a
+              class="priority-project-card"
+              href={project.href}
+              target={project.external ? '_blank' : undefined}
+              rel={project.external ? 'noopener noreferrer' : undefined}
+              aria-label={`Read ${project.title}`}
+            >
+              <img src={project.image} alt={project.imageAlt} />
+              <div class="priority-project-copy">
+                <div class="project-eyebrow"><b>{project.type}</b></div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <ul class="priority-tag-list" aria-label={`${project.title} topics`}>
                   {project.tags.map((tag) => <li>{tag}</li>)}
                 </ul>
               </div>
@@ -207,6 +231,10 @@ const featuredProjects = [
 
   .featured-projects-heading {
     margin-bottom: 16px;
+  }
+
+  .writing-heading {
+    margin-top: 24px;
   }
 
   .featured-projects-heading h2 {
