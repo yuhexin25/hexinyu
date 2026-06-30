@@ -8,9 +8,17 @@ const sourceCounts = notes.reduce<Record<string, number>>((counts, note) => {
   counts[note.data.source.slug] = (counts[note.data.source.slug] || 0) + 1;
   return counts;
 }, {});
+const noteSortValue = (note: (typeof notes)[number]) => {
+  const dateAdded = note.data.dateAdded ? new Date(note.data.dateAdded).getTime() : Number.NaN;
+  if (!Number.isNaN(dateAdded)) return dateAdded;
+  const year = Number(note.data.year ?? note.data.sourceDate ?? 0);
+  return Number.isFinite(year) ? year : 0;
+};
 const featuredNotes = notes
   .slice()
   .sort((a, b) => {
+    const dateDifference = noteSortValue(b) - noteSortValue(a);
+    if (dateDifference !== 0) return dateDifference;
     const aYear = Number(a.data.year ?? a.data.sourceDate ?? 0);
     const bYear = Number(b.data.year ?? b.data.sourceDate ?? 0);
     return bYear - aYear || a.data.title.localeCompare(b.data.title);
